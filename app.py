@@ -4,7 +4,9 @@ import numpy as np
 from PIL import Image
 
 # Load model
-model = tf.keras.models.load_model("emotion_model.keras")
+import os
+model_path = os.path.join(os.path.dirname(__file__), "emotion_model.keras")
+model = tf.keras.models.load_model(model_path)
 st.title("😊 Emotion Detection System")
 st.write("Upload an image and AI will predict emotion.")
 
